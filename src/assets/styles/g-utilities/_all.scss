@@ -1,1 +1,18 @@
-@import './background'
+@import './background';
+
+
+.font-size--small {
+    font-size: var(--font-size--small);
+}
+
+.font-size--default {
+    font-size: var(--font-size--default);
+}
+
+.font-size--large {
+    font-size: var(--font-size--large);
+}
+
+.u-text--light{
+    color: var(--color-text-2) !important;
+}

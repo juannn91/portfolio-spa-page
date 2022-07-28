@@ -1,0 +1,12 @@
+//https://www.developerdrive.com/15-essential-sass-mixins/
+
+@function toRem($value) {
+    $remValue: ($value / 16)+rem;
+    @return $remValue;
+}
+
+@mixin flex-center( ){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,13 +1,24 @@
+:root {
+    --font-size--small: 0.9rem; /* 14px */
+    --font-size--default: 1.1rem; /* 16px */
+    --font-size--large: 1.8rem; /* 24px */
+    
+    --color-black: black;
+}
+
 
 .theme--black {
     --color-background-1: #1D2228;
     --color-background-2: #1D2228;
     --color-text-1: #E1E2E2;
+    --color-text-2: #E1E2E2;
 }
 
 .theme--light {
-    --color-background-1: white;
-    --color-background-2: #F1F1EF;
-    --color-text-1: #34421E;
-    --color-text-2: #C19434;
+    --color-background-1: #ffffff;
+    --color-background-2: #6E07F3;
+    --color-background-3: #6e08f330;
+    --color-text-1: #141c3a;
+    --color-text-2: #ffffff;
+    --color-text-3: gray;
 }

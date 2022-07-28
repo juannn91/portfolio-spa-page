@@ -1,12 +1,16 @@
-@import '../a-settings/vars';
+@import "../a-settings/vars";
 
 * {
+  --font-size: calc((var(--pixels) / 16) * 1rem);
+  font-size: var(--font-size);
   box-sizing: border-box;
-  overflow: auto;
   margin: 0;
   padding: 0;
   font-family: $font-family-primary;
+  color: var(--color-text-1);
+  line-height: 1.5;
 }
 
-
-
+h1 {
+  margin-top: 0px;
+}
