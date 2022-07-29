@@ -1,16 +1,5 @@
 <template>
   <div class="home">
-    <nav class="nav-bar">
-      <div>brand</div>
-      <div class="nav-bar__right">
-        <div>
-          <a href="">Metorship</a>
-        </div>
-        <div>
-          <a href="">say hello</a>
-        </div>
-      </div>
-    </nav>
 
     <div class="u-background-1">
       <section class="container presentation">
@@ -128,7 +117,7 @@
 
     <div class="u-background-1">
       <section class="container general-section">
-        <h3 class="home-heading ">Interesting on working together?</h3>
+        <h3 class="home-heading">Interesting on working together?</h3>
         <p class="">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quia libero
         </p>
@@ -136,32 +125,21 @@
       </section>
     </div>
 
-    <footer class="u-background-2 main-footer">
-      <div>logo</div>
-      <p class="u-text--light">lema phrase</p>
-      <div>
-        <a href="#">twiiter</a>
-        <a href="#">linkedin</a>
-        <a href="#">linkedin</a>
-      </div>
-      <div class="u-text--light">Handcrafted by me 2022</div>
-    </footer>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'HomeView',
-  components: {},
-});
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
 </script>
 
 <style lang="scss">
 @import "@/assets/styles/global.scss";
 
-.nav-bar{
+.juan-logo{
+  font-size: 3rem;
+}
+
+.nav-bar {
   position: absolute;
   top: 0px;
   display: flex;
@@ -172,12 +150,13 @@ export default defineComponent({
   width: 100%;
 }
 
-.nav-bar__right{
+.nav-bar__right {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
-.main-footer{
+.main-footer {
   height: 400px;
   @include flex-center();
   flex-direction: column;
@@ -192,9 +171,9 @@ export default defineComponent({
   margin-bottom: 30px;
 }
 
-.home-container{
+.home-container {
   margin: 150px auto;
-  >*{
+  > * {
     margin-bottom: 150px;
   }
 }
@@ -380,4 +359,10 @@ export default defineComponent({
   padding: 20px;
   border: 1px solid var(--color-text-3);
 }
+
+.main-footer__logo{
+  @include flex-center();
+  flex-direction: column;
+}
+
 </style>
