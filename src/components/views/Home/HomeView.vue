@@ -1,19 +1,18 @@
 <template>
   <div class="home">
 
-    <div class="u-background-1">
+    <div>
       <section class="container presentation">
         <h1 class="presentation__title">Javascript Architect & Mentor</h1>
-
         <h2 class="presentation__sub-title">I construct healthy ideas</h2>
       </section>
     </div>
 
-    <div class="u-background-2">
+    <div class="u-bg-darker">
       <section class="container introduction">
         <div>
-          <h1 class="u-text--light">Hi I'm Juan nice to meet you</h1>
-          <p class="u-text--light">
+          <h1 class="">Hi I'm Juan nice to meet you</h1>
+          <p class="">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus libero vitae, enim eum
             iste eos. In voluptate, ad aut culpa omnis accusantium assumenda consequatur, voluptatum
             voluptatibus pariatur officia maxime similique!
@@ -22,7 +21,7 @@
       </section>
     </div>
 
-    <div class="u-background-1 home-container">
+    <div class=" home-container">
       <section class="container worke-experience">
         <h2 class="home-heading">Where I'v worked</h2>
 
@@ -57,7 +56,7 @@
             <h2 class="home-heading recent-work-title">My recent work</h2>
           </div>
 
-          <div class="recent-work-item">
+          <JcCard class="recent-work-item">
             <h3 class="recent-work-item__title">Design system with vue 2</h3>
 
             <div class="recent-work-item__content">
@@ -81,16 +80,16 @@
                 </div>
               </footer>
             </div>
-          </div>
+          </JcCard>
         </div>
       </section>
     </div>
 
-    <div class="u-background-2">
+    <div class="u-bg-darker">
       <section class="container general-section startups">
-        <div class="">
-          <h2 class="home-heading u-text--light">My Startup projects</h2>
-          <p class="u-text--light">
+        <div>
+          <h2 class="home-heading ">My Startup projects</h2>
+          <p class="">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur nostrum
             consequatur voluptatibus veniam reiciendis! Necessitatibus recusandae reprehenderit
             inventore ipsa itaque sapiente nam minima. Quaerat corporis rem inventore exercitationem
@@ -100,28 +99,39 @@
       </section>
     </div>
 
-    <div class="">
+    <div>
       <section class="container general-section startup-products">
         <div class="startup-products__container">
-          <div class="startup-product">
-            <h4>Product1</h4>
+
+          <JcCard title="Product1">
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur nostrum
               consequatur voluptatibus veniam reiciendis! Necessitatibus
             </p>
             <span> tag </span>
-          </div>
+          </JcCard>
+
+          <JcCard title="Product2">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur nostrum
+              consequatur voluptatibus veniam reiciendis! Necessitatibus
+            </p>
+            <span> tag </span>
+            <span> tag </span>
+          </JcCard>
+
         </div>
+
       </section>
     </div>
 
-    <div class="u-background-1">
+    <div>
       <section class="container general-section">
         <h3 class="home-heading">Interesting on working together?</h3>
-        <p class="">
+        <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quia libero
         </p>
-        <button>Lets start a conversation</button>
+        <JcButton @click="sayHello">Lets start a conversation</JcButton>
       </section>
     </div>
 
@@ -129,11 +139,16 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
+import JcButton from '@/components/atoms/JcButton.vue';
+import JcCard from '@/components/atoms/JcCard.vue';
+
+function sayHello() {
+  alert('hola');
+}
 </script>
 
 <style lang="scss">
-@import "@/assets/styles/global.scss";
+@import "@/assets/styles/utils.scss";
 
 .juan-logo{
   font-size: 3rem;
@@ -161,10 +176,6 @@ import { Icon } from '@iconify/vue';
   @include flex-center();
   flex-direction: column;
   gap: 40px;
-}
-
-.home {
-  background: var(--color-background-1);
 }
 
 .home-heading {
@@ -283,10 +294,7 @@ import { Icon } from '@iconify/vue';
 
 .recent-work-item {
   position: relative;
-  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid var(--color-text-3);
-  padding: 30px;
 }
 
 .recent-work-item__title {
@@ -295,9 +303,8 @@ import { Icon } from '@iconify/vue';
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--color-background-1);
+  background: var(--color-bg);
   @include flex-center();
-  opacity: 0;
   &:hover {
     opacity: 0;
   }
@@ -310,7 +317,7 @@ import { Icon } from '@iconify/vue';
 
   p {
     text-align: justify;
-    font-size: var(--font-size--small);
+    font-size: var(--font-size--sm);
   }
 
   footer {
@@ -350,14 +357,15 @@ import { Icon } from '@iconify/vue';
 }
 
 .startup-products__container {
-  margin-top: -5rem;
-  background: red;
+  margin-top: calc(var(--space-xxl) * -1);
+  margin-bottom: var(--space-xxl);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
 }
 
 .startup-product {
-  background: var(--color-background-1);
-  padding: 20px;
-  border: 1px solid var(--color-text-3);
+
 }
 
 .main-footer__logo{

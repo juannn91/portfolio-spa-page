@@ -1,9 +1,12 @@
 <template>
-  <div :class="getTheme()">
+  <div class="theme" :data-theme="theme">
     <router-view />
 
     <nav class="nav-bar">
-      <div><Icon class="juan-logo" icon="mdi:alpha-j-circle-outline" /></div>
+      <div>
+        <Icon class="juan-logo" icon="mdi:alpha-j-circle-outline" />
+      </div>
+
       <div class="nav-bar__right">
         <div>
           <a href="">Metorship</a>
@@ -14,41 +17,53 @@
       </div>
     </nav>
 
-    <footer class="u-background-2 main-footer">
+    <footer class="u-bg-darker main-footer">
       <div class="main-footer__logo">
         <Icon class="juan-logo" icon="mdi:alpha-j-circle-outline" color="white" />
-        <div>
-          <label for="page-style" class="u-text--light">
-            Set dark mode
-            <input type="checkbox" id="page-style" v-model="isDarkMode"/>
-          </label>
-        </div>
+        <div></div>
       </div>
 
-      <p class="u-text--light main-footer__phrase">
-        If you think good architecture is expensive, try bad architecture.
-      </p>
+      <div class="main-footer__phrase">
+        <p>
+          "If you think good architecture is expensive, try bad architecture.""
+        </p>
+        <div class="main-footer__change-style__container">
+        </div>
+      </div>
 
       <div class="main-footer__social-media">
         <a href="#"><Icon icon="el:github-text" /> github</a>
         <a href="#"><Icon icon="eva:linkedin-fill" /> linkedin</a>
       </div>
-      <div class="u-text--light">Handcrafted by me 2022</div>
+
+        <JcSwich id="page-style" v-model="isDarkMode" label="Go to dark" labelOff="Go to light" />
+
+      <div class="">
+        <div>Handcrafted by me 2022</div>
+      </div>
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { Icon } from '@iconify/vue';
+import JcSwich from './components/atoms/JcSwich.vue';
 
 const isDarkMode = ref(false);
 
-function getTheme() {
-  return isDarkMode.value ? 'theme--dark' : 'theme--light';
-}
+const theme = computed(() => (isDarkMode.value ? 'dark' : ''));
 </script>
 
 <style lang="scss">
 @import "@/assets/styles/main.scss";
+.main-footer__phrase{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-footer__change-style__container{
+  max-width: 200px;
+}
 </style>

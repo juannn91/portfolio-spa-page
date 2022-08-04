@@ -12,6 +12,7 @@ See package log for more info
 [dorota1997](https://dorota1997.github.io/re)
 [brittanychiang](https://brittanychiang.com/?ref=onepagelove)
 [mattfarley](https://mattfarley.ca/)
+[styles](https://codyhouse.co/ds/get-started)
 
 # 📚 Getting started
 
