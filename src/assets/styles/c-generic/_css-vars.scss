@@ -1,0 +1,134 @@
+:root {
+  --text-base-size: 1.25rem;
+  --text-unit: 1.25rem;
+  --text-scale-ratio: 1.25;
+
+  --font-size--sm: 0.9rem; /* 14px */
+  --font-size: 1.1rem; /* 16px */
+  --font-size-lg: 1.8rem; /* 24px */
+
+  --space-unit: 1rem;
+  --space-xxxxs: calc(0.125 * var(--space-unit));
+  --space-xxxs: calc(0.25 * var(--space-unit));
+  --space-xxs: calc(0.375 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+
+  --component-padding: var(--space-sm);
+  --component-border-redius: 10px;
+}
+
+:root {
+  --radius-sm: calc(var(--radius, 0.375em) / 2);
+  --radius-md: var(--radius, 0.375em);
+  --radius-lg: calc(var(--radius, 0.375em) * 2);
+
+  --shadow-xs: 0 0.1px 0.3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 0.3px 0.4px rgba(0, 0, 0, 0.025),
+    0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 0.9px 1.5px rgba(0, 0, 0, 0.03),
+    0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 1.2px 1.9px -1px rgba(0, 0, 0, 0.014),
+    0 3.3px 5.3px -1px rgba(0, 0, 0, 0.038),
+    0 8.5px 12.7px -1px rgba(0, 0, 0, 0.085),
+    0 30px 42px -1px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 1.5px 2.1px -6px rgba(0, 0, 0, 0.012),
+    0 3.6px 5.2px -6px rgba(0, 0, 0, 0.035),
+    0 7.3px 10.6px -6px rgba(0, 0, 0, 0.07),
+    0 16.2px 21.9px -6px rgba(0, 0, 0, 0.117),
+    0 46px 60px -6px rgba(0, 0, 0, 0.2);
+
+  --inner-glow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075);
+  --inner-glow-top: inset 0 1px 0.5px hsla(0, 0%, 100%, 0.075);
+
+  --transition: .4s;
+  --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+:root {
+  --z-index-header: 3;
+  --z-index-popover: 5;
+  --z-index-fixed-element: 10;
+  --z-index-overlay: 15;
+}
+
+:root {
+  --color-primary-lighter: hsl(250, 84%, 67%);
+  --color-primary-light: hsl(250, 84%, 60%);
+  --color-primary: hsl(250, 84%, 54%);
+  --color-primary-dark: hsl(250, 84%, 46%);
+  --color-primary-darker: hsl(250, 84%, 38%);
+
+  --color-accent-lighter: hsl(342, 89%, 62%);
+  --color-accent-light: hsl(342, 89%, 56%);
+  --color-accent: hsl(342, 89%, 48%);
+  --color-accent-dark: hsl(342, 89%, 43%);
+  --color-accent-darker: hsl(342, 89%, 38%);
+
+  --color-success-lighter: hsl(170, 78%, 47%);
+  --color-success-light: hsl(170, 78%, 42%);
+  --color-success: hsl(170, 78%, 36%);
+  --color-success-dark: hsl(170, 78%, 31%);
+  --color-success-darker: hsl(170, 78%, 26%);
+
+  --color-error-lighter: hsl(342, 89%, 62%);
+  --color-error-light: hsl(342, 89%, 56%);
+  --color-error: hsl(342, 89%, 48%);
+  --color-error-dark: hsl(342, 89%, 43%);
+  --color-error-darker: hsl(342, 89%, 38%);
+
+  --color-warning-lighter: hsl(35, 79%, 82%);
+  --color-warning-light: hsl(35, 79%, 74%);
+  --color-warning: hsl(35, 79%, 66%);
+  --color-warning-dark: hsl(35, 79%, 56%);
+  --color-warning-darker: hsl(35, 79%, 48%);
+
+  --color-black: hsl(230, 13%, 9%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-contrast-lower: hsl(0, 0%, 100%);
+  --color-contrast-low: hsl(240, 4%, 65%);
+  --color-contrast-medium: hsl(225, 4%, 47%);
+  --color-contrast-high: hsl(230, 7%, 23%);
+  --color-contrast-higher: hsl(230, 13%, 9%);
+
+  --color-bg-lighter: hsl(0, 0%, 100%);
+  --color-bg-light: hsl(240, 25%, 92%);
+  --color-bg: hsl(0, 0%, 100%);
+  --color-bg-dark: hsl(240, 4%, 95%);
+  --color-bg-darker: hsl(240, 61%, 51%);
+
+  --color-border: var(--color-bg-darker);
+
+}
+
+.theme{
+    background-color: var(--color-bg);
+}
+
+
+.theme[data-theme=dark] {
+  
+  --color-contrast-lower: hsl(240, 6%, 26%);
+  --color-contrast-low: hsl(240, 3%, 41%);
+  --color-contrast-medium: hsl(213, 3%, 57%);
+  --color-contrast-high: hsl(240, 5%, 82%);
+  --color-contrast-higher: var(--color-white);
+
+  --color-bg-lighter: hsl(232, 7%, 22%);
+  --color-bg-light: hsl(233, 8%, 19%);
+  --color-bg: hsl(240, 2%, 47%) ;
+  --color-bg-dark: hsl(233, 8%, 11%);
+  --color-bg-darker: hsl(232, 7%, 8%);
+
+  --color-primary: var(--color-white);
+}
