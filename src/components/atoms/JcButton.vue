@@ -1,18 +1,12 @@
-<script setup lang="ts">
-import { defineEmits } from 'vue';
-
-const emit = defineEmits(['click']);
-
-function onClick(event: InputEvent) {
-  emit('click', event);
-}
-</script>
-
 <template>
-    <button class="jc-btn" @click="onClick('clcik')">
+    <button class="jc-btn" >
         <slot/>
     </button>
 </template>
+
+<script setup lang="ts">
+
+</script>
 
 <style lang="scss">
 @use '@/assets/styles/c-generic/css-vars';

@@ -1,16 +1,17 @@
 <template>
     <label :for="props.id" class="jc-swich">
         <span v-if="hasLabel()">{{getLabel(props.modelValue)}}</span>
-        <div class="jc-swich-background" >
+        <div class="jc-swich-container" >
             <input
-            class="jc-swich-input"
-            type="checkbox"
-            v-bind="$attrs"
-            :id="props.id"
-            :checked="props.modelValue"
-            @change="onChange">
+              class="jc-swich-input"
+              type="checkbox"
+              v-bind="$attrs"
+              :id="props.id"
+              :checked="props.modelValue"
+              @change="onChange">
             <div class="jc-swich-slider"/>
         </div>
+
     </label>
 </template>
 
@@ -49,7 +50,6 @@ function onChange(event : Event) {
 }
 
 function getLabel(isOn : boolean) {
-  console.log(isOn);
   return isOn ? props.labelOff : props.label;
 }
 
@@ -64,7 +64,7 @@ function hasLabel() {
 
 $height : 34px;
 $width : 60px;
-$sphere-size: 26px;
+$sphere-size: 25px;
 $sphere-padding: 4px;
 
 .jc-swich{
@@ -73,10 +73,9 @@ $sphere-padding: 4px;
     align-items: center;
     gap: var(--space-md);
     cursor: pointer;
-
 }
 
-.jc-swich-background {
+.jc-swich-container {
     position: relative;
     display: inline-block;
     width: $width;
@@ -95,8 +94,10 @@ $sphere-padding: 4px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-bg-light);
+    background-color: var(--color-bg-lighter);
     border-radius: $height;
+    border: utils.$border;
+    border-color: var(--color-contrast-low);
 
     &::before{
         position: absolute;
@@ -112,10 +113,8 @@ $sphere-padding: 4px;
     }
 }
 
-.jc-swich-input{
-    &:checked + .jc-swich-slider::before{
-        transform: translateX($sphere-size);
-    }
+.jc-swich-input:checked + .jc-swich-slider::before{
+    transform: translateX($sphere-size);
 }
 
 </style>

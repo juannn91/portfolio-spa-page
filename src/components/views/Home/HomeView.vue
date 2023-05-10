@@ -11,7 +11,7 @@
     <div class="u-bg-darker">
       <section class="container introduction">
         <div>
-          <h1 class="">Hi I'm Juan nice to meet you</h1>
+          <h1 class="">{{ t("message.hello") }}</h1>
           <p class="">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus libero vitae, enim eum
             iste eos. In voluptate, ad aut culpa omnis accusantium assumenda consequatur, voluptatum
@@ -56,8 +56,7 @@
             <h2 class="home-heading recent-work-title">My recent work</h2>
           </div>
 
-          <JcCard class="recent-work-item">
-            <h3 class="recent-work-item__title">Design system with vue 2</h3>
+          <JcCard class="recent-work-item" title="Este es el titulo">
 
             <div class="recent-work-item__content">
               <p class="recent-work-item__description">
@@ -141,6 +140,9 @@
 <script setup lang="ts">
 import JcButton from '@/components/atoms/JcButton.vue';
 import JcCard from '@/components/atoms/JcCard.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 function sayHello() {
   alert('hola');

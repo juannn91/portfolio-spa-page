@@ -1,6 +1,8 @@
+<!-- eslint-disable max-len -->
 <template>
   <div class="theme" :data-theme="theme">
-    <router-view />
+
+<router-view />
 
     <nav class="nav-bar">
       <div>
