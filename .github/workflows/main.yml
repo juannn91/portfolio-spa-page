@@ -7,48 +7,31 @@ on:
 
 env:
   CI_GL_TOKEN: "gl token"
-  CI_NAME_TEST: "test name"
+  CI_NAME_TEST:  ${{ vars.CI_NAME_TEST }}
   # CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
-  # CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
+  # CI_NAME_TEST:
 
 jobs:
   hello_world:
     runs-on: ubuntu-latest
+    environment: develop
     name: Hello World
     steps:
       - uses: actions/checkout@v3
       - uses : actions/setup-node@v3
+        env:
+          MESSAGE: ${{ vars.CI_NAME_TEST }}
         with:
           node-version: 18
       - run: echo "Hello World"
-      - run: echo "Hola mundo !!! $CI_NAME_TEST"
-      - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{ secrets.GL_TOKEN }}}
+      - run: echo "Hola mundo !!! $MESSAGE"
+      - run: echo "Hola mundo2 !!! ${{ vars.CI_NAME_TEST }}"
+      - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{ secrets.GL_TOKEN }}
       - run: npm config set @playvox:registry https://gitlab.com/api/v4/packages/npm/
       - run: npm ci
       - run: npm run lint
       - run: npm run test:unit
 
-
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     name: testing
-#     environment: github-pages
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Run linting rules and tests
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-#       - run: echo "primer test $CI_NAME_TEST"
-#       - run: echo $CI_NAME_TEST
-#       - run: echo "Hola mundo !!! $CI_NAME_TEST"
-#       - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{ vars.CI_GL_TOKEN }}
-#       - run: npm config set @playvox:registry https://gitlab.com/api/v4/packages/npm/
-#       - run: npm ci
-#       - run: npm run lint
-#       - run: npm run test:unit
 
 # name: Build Vue
 # on:
