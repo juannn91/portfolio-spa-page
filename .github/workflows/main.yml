@@ -1,5 +1,5 @@
 # create a workflow to build and deploy your Vue app to GitHub Pages
-name: lint-and-test
+name: develop
 
 on:
   push:
@@ -12,7 +12,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Node ${{ matrix.node-version }} sample
+    name: testing
     environment: github-pages
     steps:
       - uses: actions/checkout@v3
