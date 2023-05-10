@@ -26,7 +26,7 @@ jobs:
         env:
           MESSAGE: ${{ vars.CI_NAME_TEST }}
       - run: echo "Hola mundo2 !!! ${{ vars.CI_NAME_TEST }}"
-      - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{vars.GL_TOKEN}}
+      - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{ secrets.GL_TOKEN }}
       - run: npm config set @playvox:registry https://gitlab.com/api/v4/packages/npm/
       - run: npm ci
       - run: npm run lint
