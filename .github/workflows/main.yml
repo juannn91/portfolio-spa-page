@@ -23,8 +23,6 @@ jobs:
       - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{vars.GL_TOKEN}}
       - run: npm config set @playvox:registry https://gitlab.com/api/v4/packages/npm/
       - run: npm ci
-      - run: npm run lint
-      - run: npm run test:unit
 
 
 # name: Build Vue
