@@ -1,38 +1,26 @@
 # create a workflow to build and deploy your Vue app to GitHub Pages
 name: lint-and-test
+
 on:
   push:
     branches: ["main"]
+
+env: 
+  CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
+  CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
+
 jobs:
-  say-hello: 
-    runs-on: ubuntu-latest
-    environment: github-pages
-    name: Say Hello
-    steps:
-      - name: Say Hello
-        env: 
-          CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
-          CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
-        run: echo ${{CI_NAME_TEST}}
-      - run: echo ${{CI_GL_TOKEN}}
-      - run: echo "Hola mundo !!! $CI_NAME_TEST"
   build:
     runs-on: ubuntu-latest
     name: Node ${{ matrix.node-version }} sample
     environment: github-pages
-    strategy:
-      matrix:
-        node-version:  [ 18 ]
     steps:
       - uses: actions/checkout@v3
       - name: Run linting rules and tests
-        env: 
-          CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
-          CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: echo "primer test"
+          node-version: 18
+      - run: echo "primer test $CI_NAME_TEST"
       - run: echo ${{CI_NAME_TEST}}
       - run: echo "Hola mundo !!! $CI_NAME_TEST"
       - run: npm config set -- //gitlab.com/api/v4/packages/npm/:_authToken=${{CI_GL_TOKEN}}
