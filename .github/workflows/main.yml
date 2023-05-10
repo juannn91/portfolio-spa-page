@@ -5,9 +5,9 @@ on:
   push:
     branches: ["main"]
 
-# env:
-#   CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
-#   CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
+env:
+  CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
+  CI_NAME_TEST: ${{ vars.CI_NAME_TEST }}
 
 # jobs:
 #   build:
@@ -48,13 +48,14 @@ on:
 #           reponame: "portfolio-spa-page"
 #           token: ${{ secrets.GITHUB_TOKEN }}
 
-# job to say hellow world
 jobs:
   hello_world:
     runs-on: ubuntu-latest
     name: Hello World
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Hello World
         run: echo "Hello World"
+      - name: print variables
+        run: echo "Hola mundo !!! $CI_NAME_TEST"
