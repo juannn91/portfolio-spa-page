@@ -5,12 +5,6 @@ on:
   push:
     branches: ["main"]
 
-env:
-  CI_GL_TOKEN: "gl token"
-  CI_NAME_TEST:  ${{ vars.CI_NAME_TEST }}
-  # CI_GL_TOKEN: ${{ secrets.GL_TOKEN }}}
-  # CI_NAME_TEST:
-
 jobs:
   hello_world:
     runs-on: ubuntu-latest

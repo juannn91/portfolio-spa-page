@@ -10,7 +10,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@playvox/mfe-playground": "^1.2.0"
+    "@playvox/mfe-playground": "1.0.0"
   },
   "devDependencies": {
   }
